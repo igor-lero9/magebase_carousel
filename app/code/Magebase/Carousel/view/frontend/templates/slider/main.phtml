@@ -1,16 +1,16 @@
 <?php
 $banners = $this->getBannerCollection();
 ?>
-
 <?php if ($this->getStatus()): ?>
-    <link rel="stylesheet" type="text/css" href="<?php echo $this->getViewFileUrl('Magebase_Carousel::css/animate.css') ?>">
-
     <?php if (!$this->getSliderIncludeBlock()): ?>
         <div class="owl-carousel owl-theme-full">
             <?php foreach ($banners as $banner): ?>
                 <?php if ($banner->getImage()): ?>
-                    <div class="item"><img alt="<?php echo $banner->getImageAlt() ?>"
-                                           src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/></div>
+                    <div class="item">
+                    <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php if($banner->getUrl()){echo $banner->getUrl() }else{echo '#'}?>" title="<?php echo $banner->getImageAlt() ?>">
+                    <img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/>
+                    </a>
+                    </div>
                 <?php elseif ($banner->getVideo()): ?>
                     <div class="item-video"><a class="owl-video" href="<?php echo $banner->getVideo(); ?>"></a></div>
                 <?php endif; ?>
@@ -21,7 +21,10 @@ $banners = $this->getBannerCollection();
             <div class="owl-carousel owl-theme-half">
                 <?php foreach ($banners as $banner): ?>
                     <?php if ($banner->getImage()): ?>
-                        <div class="item"><img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/></div>
+                        <div class="item">
+                            <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php if($banner->getUrl()){echo $banner->getUrl() }else{echo '#'}?>" title="<?php echo $banner->getImageAlt() ?>">
+                            <img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/></a>
+                        </div>
                     <?php elseif ($banner->getVideo()): ?>
                         <div class="item-video"><a class="owl-video" href="<?php echo $banner->getVideo(); ?>"></a>
                         </div>
@@ -30,7 +33,6 @@ $banners = $this->getBannerCollection();
             </div>
             <div class="carousel-sidebar">
                 <div class="block-carousel-sidebar">
-                    <?php echo $this->getSliderFirstBlock(); ?>
                     <?php echo $this->getSliderFirstBlock(); ?>
                 </div>
                 <div class="block-carousel-sidebar">
