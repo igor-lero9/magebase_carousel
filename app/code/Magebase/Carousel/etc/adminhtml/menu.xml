@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Magebase_Carousel::carousel" title="Banner Slider" module="Magebase_Carousel" sortOrder="10"
+             resource="Magebase_Carousel::carousel"/>
+        <add id="Magebase_Carousel::carousel_sliders" title="Manage Sliders" module="Magebase_Carousel" sortOrder="10"
+             parent="Magebase_Carousel::carousel" action="carousel/slider"
+             resource="Magebase_Carousel::carousel_sliders"/>
+        <add id="Magebase_Carousel::carousel_banners" title="Manage Banners" module="Magebase_Carousel" sortOrder="10"
+             parent="Magebase_Carousel::carousel" action="carousel/banner"
+             resource="Magebase_Carousel::carousel_banners"/>
+    </menu>
+</config>

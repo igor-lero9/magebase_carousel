@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Banner Slider</title>
+    </head>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">Magebase_Carousel::carousel</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" name="store_switcher">
+                <action method="setUseConfirm">
+                    <argument name="params" xsi:type="string">1</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Magebase\Carousel\Block\Adminhtml\Slider\Edit" name="banner_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+            <block class="Magebase\Carousel\Block\Adminhtml\Slider\Edit\Tabs" name="slider_edit_tabs">
+                <block class="Magebase\Carousel\Block\Adminhtml\Slider\Edit\Tab\Form" name="slider_edit_tab_form"/>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">slider_edit_tab_form</argument>
+                </action>
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">banner_section</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Banner of Slider</item>
+                        <item name="title" xsi:type="string">Banner of Slider</item>
+                        <item name="url" xsi:type="helper" helper="Magebase\Carousel\Helper\Data::getSliderBannerUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

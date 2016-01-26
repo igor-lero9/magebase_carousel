@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Magebase_Carousel::carousel" title="Magebase Carousel" sortOrder="100">
+                    <resource id="Magebase_Carousel::carousel_sliders" title="Carousel Sliders" sortOrder="10"/>
+                    <resource id="Magebase_Carousel::carousel_banners" title="Carousel Banners" sortOrder="10"/>
+                </resource>
+                <resource id="Magento_Backend::stores">
+                    <resource id="Magento_Backend::stores_settings">
+                        <resource id="Magento_Config::config">
+                            <resource id="Magebase_Carousel::config_carousel" title="Magebase Carousel"/>
+                        </resource>
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>
