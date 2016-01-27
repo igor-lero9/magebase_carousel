@@ -7,7 +7,7 @@ $banners = $this->getBannerCollection();
             <?php foreach ($banners as $banner): ?>
                 <?php if ($banner->getImage()): ?>
                     <div class="item">
-                    <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php if($banner->getUrl()){echo $banner->getUrl() }else{echo '#'}?>" title="<?php echo $banner->getImageAlt() ?>">
+                    <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php echo $banner->getUrl(); ?>" title="<?php echo $banner->getImageAlt() ?>">
                     <img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/>
                     </a>
                     </div>
@@ -22,7 +22,7 @@ $banners = $this->getBannerCollection();
                 <?php foreach ($banners as $banner): ?>
                     <?php if ($banner->getImage()): ?>
                         <div class="item">
-                            <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php if($banner->getUrl()){echo $banner->getUrl() }else{echo '#'}?>" title="<?php echo $banner->getImageAlt() ?>">
+                            <a target="<?php echo $banner->getTargetValue(); ?>" href="<?php echo $banner->getUrl(); ?>" title="<?php echo $banner->getImageAlt() ?>">
                             <img alt="<?php echo $banner->getImageAlt() ?>" src="<?php echo $this->getBannerImageUrl($banner->getImage()); ?>"/></a>
                         </div>
                     <?php elseif ($banner->getVideo()): ?>

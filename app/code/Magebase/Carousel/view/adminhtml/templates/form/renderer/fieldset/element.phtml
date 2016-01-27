@@ -1,0 +1,16 @@
+<?php
+	$element = $block->getElement();
+?>
+<script type="text/javascript">
+require(['jquery'],function ($) {
+	alert('test');
+    $('#<?php echo $element->getHtmlId() ?>_default').click(function(event) {
+        $('#<?php echo $element->getHtmlId() ?>').prop('disabled', $(this).prop('checked'));
+        $(this).val($(this).prop('checked'));
+        if(this.id == 'page_image_default') {
+            $('#page_image_delete').prop('disabled', $(this).prop('checked'));
+            $('#page_image_delete').next().toggleClass('disabled');
+        }
+    });
+});
+</script>
