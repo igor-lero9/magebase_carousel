@@ -78,6 +78,9 @@ README.md
 composer.json
 composer.lock
 index.php
+!app/code/Magebase/Carousel/Controller/Adminhtml/Banner/Index.php
+!app/code/Magebase/Carousel/Controller/Adminhtml/Slider/Index.php
+!app/code/Magebase/Carousel/Controller/Index.php
 ini.php
 nginx.conf.sample
 package.json

@@ -3,7 +3,7 @@ $banners = $this->getBannerCollection();
 ?>
 <?php if ($this->getStatus()): ?>
     <?php if (!$this->getSliderIncludeBlock()): ?>
-        <div class="owl-carousel owl-theme-full" data-mage-init='{"carousel":{}}'>
+        <div class="owl-carousel owl-theme-full">
             <?php foreach ($banners as $banner): ?>
                 <?php if ($banner->getImage()): ?>
                     <div class="item">
@@ -42,3 +42,8 @@ $banners = $this->getBannerCollection();
         </div>
     <?php endif; ?>
 <?php endif; ?>
+<script type="text/javascript">
+        require(['jquery', 'magebase/carousel', 'domReady!'], function ($) {
+                $('.owl-carousel').owlCarousel(<?php echo $this->getOptions(); ?>);
+        });
+    </script>

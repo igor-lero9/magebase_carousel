@@ -270,14 +270,15 @@
     margin-right: 0;
 }
 .carousel-wrapper .owl-carousel{
-      width: 880px;
+    padding: 0 8px;
     float: left;
+    width: 71%;
     border: 1px solid #cccccc;
 }
 .carousel-wrapper .carousel-sidebar {
-    width: 300px;
-    float: right;
-    margin-right: 0;
+    padding: 0 8px 0 7px;
+    float: left;
+    width: 25.7%;
 }
 .carousel-wrapper .carousel-sidebar .block-carousel-sidebar:first-child{
   margin-bottom: 18px;
